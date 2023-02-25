@@ -15,7 +15,7 @@
     <?php
     include("admin_header.php");
     include("util/alert.php");
-    if (!isset($_SESSION['user'])) {
+    if (!isset( $_SESSION['admin'])) {
         header("location: login_admin.php");
         exit();
     }
@@ -41,7 +41,7 @@
             $adminsExist = false;
 
             while ($row = mysqli_fetch_assoc($result)) {
-                if ($row['admin_name'] != $_SESSION['user']) {
+                if ($row['admin_name'] != $_SESSION['admin']) {
                     $adminsExist = true;
                     echo ' <div class="col rounded-6 p-1 shadow-light">
                     <p class="my-1">User id : ' . $row['admin_id'] . ' </p>

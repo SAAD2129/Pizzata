@@ -15,7 +15,7 @@
 <body>
     <?php
     include("admin_header.php");
-    if(!isset($_SESSION['user'])){
+    if(!isset($_SESSION['admin'])){
         header("location: login_admin.php");
         exit();
     }

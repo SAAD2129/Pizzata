@@ -30,7 +30,7 @@ include("admin_header.php");
             <fieldset class="plane width-75p my-1 rounded-6 px-1 font-color">
                 <legend class="main-color">User Name</legend>
                 <?php
-                $name = $_SESSION['user'];
+                $name = $_SESSION['admin'];
                 $sql = "SELECT * FROM `admins` WHERE `admin_name` = '$name'";
                 $res = mysqli_query($conn, $sql);
                 if ($res) {

@@ -16,16 +16,16 @@ echo '
                 <a class="p-min nav-links " href="/pizzashop/admin/">Home</a>
             </li>
             <li class="mx-min">
-                <a class="p-min nav-links " href="products.php">products</a>
+                <a class="p-min nav-links " href="/pizzashop/admin/products.php">products</a>
             </li>
             <li class="mx-min">
-                <a class="p-min nav-links "  href="orders_admin.php">orders</a>
+                <a class="p-min nav-links "  href="/pizzashop/admin/orders_admin.php">orders</a>
             </li>
             <li class="mx-min">
-                <a class="p-min nav-links " href="admins.php">admins</a>
+                <a class="p-min nav-links " href="/pizzashop/admin/admins.php">admins</a>
             </li>
             <li class="mx-min">
-                <a class="p-min nav-links " href="users.php">users</a>
+                <a class="p-min nav-links " href="/pizzashop/admin/users.php">users</a>
             </li>
 
         </ul>
@@ -35,7 +35,7 @@ echo '
              uil-user"></i>
              <div class="drop">
              ';
-if (!isset($_SESSION['user'])) {
+if (!isset( $_SESSION['admin'])) {
     echo '
             <a href="/pizzashop/admin/login_admin.php" class=" max btn my-min">LOGIN</a>
             ';

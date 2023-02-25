@@ -63,21 +63,21 @@ if (isset($_POST['login'])) {
 </head>
 
 <body>
-    <div class="mt-3 px-10">
-        <form action="login.php" method="post" class="width-50p  m-auto shadow-light p-2">
-            <h2 class="my-1 center">LOGIN HERE</h2>
+    <div class="form">
+        <form action="login.php" method="post" >
+            <h2 class="my-2 center">LOGIN HERE</h2>
             <div class="my-1 with-100p">
                 <input type="text" name="username" autocomplete="off" maxlength="15" minlength="3"
-                    placeholder="User Name" class="plane p-1  width-100p">
+                    placeholder="User Name" class=" p-1  width-100p">
             </div>
             <div class="my-1 with-100p relative">
                 <input type="password" name="password" autocomplete="off" maxlength="20" minlength="1"
-                    placeholder="Password" class="plane p-1 passwd  width-100p">
-                <button id="showHide" type="button" role="button" onclick="handleShow()"
-                    class="showHide d-none plane">SHOW</button>
+                    placeholder="Password" class=" p-1 passwd  width-100p">
+                <button type="button" role="button" onclick="handleShow()"
+                    class="showHide d-none ">SHOW</button>
             </div>
             <div class="my-min center">
-                <a href="/pizzashop/routes/forgotpassword.php">Forgot Password ? </a>
+                <a href="/pizzashop/routes/forgotpassword.php" class="main-color">Forgot Password ? </a>
             </div>
             <div class="mt-2 mb-1 center">
                 <div class="my-min center">

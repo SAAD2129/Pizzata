@@ -92,7 +92,12 @@ input[type="password"],
 }
 .showHide {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 1rem;
+    right: 1rem;
     z-index: 31;
+    background: transparent;
+    color: var(--main-color);
+}
+.update_form .showHide {
+    top: 0.3rem;
 }

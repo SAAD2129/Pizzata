@@ -3,13 +3,12 @@ include("partials/dbconnect.php");
 include("partials/header.php");
 include("partials/alert.php");
 if (isset($_SESSION['showAlert']) && isset($_SESSION['login'])) {
-    showAlert('you are logged in<br><b class=center"><i class="uil color-light uil-shopping-bag"></i><a href="/pizzashop/routes/cart.php" class="main-color">your cart</a></b>', 'success');
+    showAlert('you are logged in', 'success');
     unset($_SESSION['showAlert']);
     unset($_SESSION['login']);
 }
 
 if (isset($_SESSION['showAlert']) && isset($_SESSION['signup'])) {
-    echo 'signup';
     if ($_COOKIE['signup'] && $_COOKIE['showAlert']) {
         showAlert('Account created successfully<br>and you are logged in', 'success');
         unset($_SESSION['showAlert']);
@@ -21,7 +20,8 @@ if (isset($_SESSION['showAlert']) && isset($_SESSION['signup'])) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!isset($_SESSION['user'])) {
-        showAlert('login to add items to cart', 'success');
+        // showAlert('login to add items to cart', 'success');
+        echo '<script>location.href = "/pizzashop/login.php"</script>';
     } else {
         // _POST is a global variable
         $pizzaName = $_POST['pizza_name'];
@@ -40,7 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $sql = "UPDATE `cart_items` SET `product_quantity` = '$newQty' WHERE product_name = '$pizzaName' AND product_user = '$username'";
                 $isSubmitted = mysqli_query($conn, $sql);
                 if ($isSubmitted) {
-                    showAlert('item updated to cart', 'success');
+                    showAlert('item updated in cart', 'success');
+                    echo '<script>
+                    setTimeout(() => {
+                        location.href = "/pizzashop/routes/cart.php"
+                    }, 2000);</script>';
                 } else {
                     showAlert('item could not updated to cart', 'error');
                 }
@@ -52,6 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 if ($res) {
                     showAlert('item added to cart', 'success');
+                    echo '<script>setTimeout(() => {
+                        location.href = "/pizzashop/routes/cart.php"
+                    }, 2000);</script>';
                 } else {
                     showAlert('item not added to cart', 'error');
                 }
@@ -76,16 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="user.css" />
     <link rel="stylesheet" href="alert.css" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
-    <script>
-
-        let dropDown = document.querySelector("#dropdown");
-        let drop = document.querySelector(".drop");
-
-        dropDown.addEventListener("click", () => {
-            drop.classList.toggle('active');
-        });
-
-    </script>
 </head>
 
 <body>
@@ -158,11 +155,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <span class="main-color">Rs ' . $row['pizza_price'] . ' <small class="line-through color-gray">' . $row['pizza_price'] * 1.2 . '</small></span>
                     </div>
                     <div class="mt-min">
-                        <form  action =' . $_SERVER["REQUEST_URI"] . ' onsubmit=  method="post" >
+                        <form onsubmit="funcx"  action =' . $_SERVER["REQUEST_URI"] . ' method="post" >
                             <input value="' . $row['pizza_name'] . '"  hidden name="pizza_name" class="plane" type="text" />
                             <input value="' . $row['pizza_price'] . '" hidden name="pizza_price" class="plane"     type="number" />
                             <div class="center">             
-                            <input value="1" minlength="1" name="quantity" max="100" maxlength="99" min="0" class="quantity plane" type="number" />
+                            <input value="1" minlength="1" name="quantity" max="100" maxlength="99" min="0" class="quantity main-color plane" type="number" />
                                 <input type="submit" value="Add to Cart" class="btn width-75p mx-min"/>
                             </div>
                         </form>
@@ -214,6 +211,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     dropDown.addEventListener("click", () => {
         drop.classList.toggle('active');
     });
+    const funcx = (e) => {
+        console.log('here');
+    }
 
 </script>
 <!-- <script src="routes/main.js"></script> -->

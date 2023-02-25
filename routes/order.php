@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../user.css">
     <link rel="stylesheet" href="../alert.css">
     <link rel="stylesheet" href="../Utility.css">
-    <link rel="stylesheet" href="../Admin/css/admin.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 
@@ -57,44 +56,44 @@
 
 
     ?>
-    <div class="container mt-3">
+    <div class="form">
 
         <?php
-        echo '<form action="order.php" method="post" class=" m-auto shadow-light p-2">
+        echo '<form action="order.php" method="post" class="order_form width-75 m-auto p-2">
     <h2 class="my-1 center">ORDER NOW</h2>
     <div class="flex gap-1">
         <div class="width-50p">
         <div class="my-1 with-100p">
         <label class="my-min block" for="contact">Contact</label>
         <input type="tel" name="contact"  autocomplete="off" maxlength="12" minlength="11" placeholder="03******34"
-            class="plane p-1  width-100p">
+            class="rounded-full p-1  width-100p">
     </div>
             <div class="my-1 with-100p">
                 <label class="my-min block" for="add01">Address line 01</label>
-                <input type="text" name="add01" maxlength="200" minlength="15"   placeholder="eg.flat no" class="plane p-1  width-100p">
+                <input type="text" name="add01" maxlength="200" minlength="15"   placeholder="eg.flat no" class="rounded-full p-1  width-100p">
             </div>
             <div class="my-1 with-100p">
                 <label class="my-min block" for="add02" >Address line 02</label>
                 <input type="text" name="add02" autocomplete="off" 
                 maxlength="200" minlength="15" 
-                    placeholder="eg.near safest school" class="plane p-1  width-100p">
+                    placeholder="eg.near safest school" class="rounded-full p-1  width-100p">
             </div>
             
         </div>
 
-        <div class="width-50p">
+        <div class="width-50p gap-1 mt-min">
             <div class="my-1 with-100p">
                         <label name="pincode">Area Pin Code</label>
                         <input type="tel" name="pincode" autocomplete="off"  maxlength="10" minlength="5"   placeholder="eg.123456"
-                            class="plane p-1 width-100p">
+                            class="rounded-full p-1 width-100p">
                     </div>
                     <div class="my-1 with-100p">
                         <label class="my-min block" for="pay_method">Payment Method</label>
                         <select name="pay_method" autocomplete="off" placeholder="User Name"
-                            class="plane p-1 mt-min width-100p">
-                            <option selected value="cash on delivery" class="plane  width-100p">Cash On Delivery
+                            class="rounded-full round p-1 mt-min width-100p">
+                            <option selected value="cash on delivery" class="rounded-full  width-100p">Cash On Delivery
                             </option>
-                            <option value="online" class="plane p-1  width-100p">Online</option>
+                            <option value="online" class="rounded-full p-1  width-100p">Online</option>
                     </div>
                 </div>
             </div>

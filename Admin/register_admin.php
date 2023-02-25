@@ -16,7 +16,7 @@
     <?php
     include("admin_header.php");
     include("util/alert.php");
-    if (!isset($_SESSION['user'])) {
+    if (!isset($_SESSION['admin'])) {
         header("location: /pizzashop/admin/login_admin.php");
         exit();
     }
@@ -31,7 +31,7 @@
         if (!$res) {
             $sql = "INSERT INTO `admins` (`admin_name`, `admin_password`,`role`) VALUES ('$name', '$hash', 'admin')";
             $res = mysqli_query($conn, $sql);
-            // $_SESSION['user'] = $name;
+            // $_SESSION['admin'] = $name;
             setcookie('showAlert', true);
             setcookie('signup', true);
             echo ' <script>
@@ -42,22 +42,23 @@
         }
     }
     ?>
-    <div class="container">
-        <h2 class="my-2 center">Sign For an Admin Account</h2>
-        <form action="register_admin.php" method="post" class="form_product  shadow-light p-1 width-25 m-auto">
+
+    <div class="form">
+        <form action="register_admin.php" method="post">
+            <h2 class="my-2 center">Sign For an Admin Account</h2>
             <div class="my-1 with-100p">
                 <input type="text" name="username" required minlength="5" maxlength="15" placeholder="Admin Name"
-                    class="plane p-1  width-100p">
+                    class=" p-1  width-100p">
             </div>
             <div class="my-1 with-100p relative">
                 <input type="password" name="password" required minlength="8" maxlength="20" placeholder="your password"
-                    class="plane passwd p-1 width-100p">
-                <button role="button" type="button" class="showHide plane d-none">SHOW</button>
+                    class=" passwd p-1 width-100p">
+                <button role="button" type="button" class="showHide  d-none">SHOW</button>
             </div>
             <div class="my-1 with-100p relative">
                 <input type="password" name="cpassword" required minlength="8" maxlength="20"
-                    placeholder="confirm password" class="plane passwd p-1 width-100p">
-                <button role="button" type="button" class="showHide plane d-none">SHOW</button>
+                    placeholder="confirm password" class=" passwd p-1 width-100p">
+                <button role="button" type="button" class="showHide  d-none">SHOW</button>
             </div>
             <div class="mt-2 mb-1 center">
                 <input type="submit" value="REGISTER" class="btn">
@@ -74,7 +75,6 @@
     let drop = document.querySelector(".drop");
     let showHideBtns = Array.from(document.querySelectorAll(".showHide"));
     let passwds = Array.from(document.querySelectorAll(".passwd"));
-    console.log(passwds)
     passwds.forEach(passwd => {
         passwd.addEventListener('input', (e) => {
             if (e.target.value.length > 0) {

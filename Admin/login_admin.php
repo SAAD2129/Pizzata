@@ -34,7 +34,7 @@
             $check = password_verify($pass, $row['admin_password']);
             // echo $check;
             if ($check) {
-                $_SESSION['user'] = $name;
+                $_SESSION['admin'] = $name;
                 setcookie('user', $name);
                 setcookie('login', true);
                 setcookie('showAlert', true);
@@ -47,17 +47,17 @@
         }
     }
     ?>
-    <div class="container">
-        <h2 class="my-2 center">Login to Admin Account</h2>
-        <form action="login_admin.php" method="post" class="form_product  shadow-light p-1 width-25 m-auto">
+    <div class="form">
+
+        <form action="login_admin.php" method="post" class="">
+            <h2 class="my-2 center">Login to Admin Account</h2>
             <div class="my-1 with-100p">
                 <input type="text" name="username" autocomplete="off" required placeholder="User Name"
-                    class="plane p-1 width-100p">
+                    class=" p-1 width-100p">
             </div>
             <div class="my-1 with-100p relative">
-                <input type="password" name="password" required placeholder="Password"
-                    class="plane passwd p-1 width-100p">
-                <button role="button" type="button" class="showHide plane d-none">SHOW</button>
+                <input type="password" name="password" required placeholder="Password" class=" passwd p-1 width-100p">
+                <button role="button" type="button" class="showHide  d-none">SHOW</button>
 
             </div>
             <div class="mt-2 mb-1 center">

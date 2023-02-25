@@ -16,7 +16,7 @@
     include("admin_header.php");
     include("util/alert.php");
 
-    if (!isset($_SESSION['user'])) {
+    if (!isset( $_SESSION['admin'])) {
         header("location: login_admin.php");
         exit();
     }

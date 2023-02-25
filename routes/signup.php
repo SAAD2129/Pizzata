@@ -49,48 +49,45 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <div class="mt-3 px-10">
+    <div class="form">
         <!-- REGISTER ACCOUNT FORM -->
-        <div class="row-2">
-            <div class="center mt-7">
-                <h2>WELCOME TO <span class="main-color">PIZZATA</span> </h2>
-                <h2>REGISTER YOUR ACCOUNT AND GET THE BEST PIZZA'S HERE</h2>
-            </div>
-            <form action="signup.php" method="post" class="m-auto shadow-light p-2">
-                <h2 class="my-1 center">REGISTER HERE</h2>
-                <div class="my-1 with-100p">
-                    <input type="text" name="username" autocomplete="off" minlength="3" maxlength="15"
-                        placeholder="User Name" class="plane p-1  width-100p">
-                </div>
-                <div class="my-1 with-100p">
-                    <input type="email" name="email" placeholder="Email" minlength="14" maxlength="50"
-                        class="plane p-1  width-100p">
-                </div>
-                <div class="my-1 with-100p">
-                    <input type="tel" name="contact" maxlength="15" minlength="11" placeholder="Contact"
-                        class="plane p-1  width-100p">
-                </div>
-                <div class="my-1 with-100p relative">
-                    <input type="password" name="password" maxlength="20" minlength="8" placeholder="Password"
-                        class="plane p-1 passwd width-100p">
-                    <button role="button" type="button" class="showHide plane d-none">SHOW</button>
-                </div>
-                <div class="my-1 with-100p relative">
-                    <input type="password" name="cpassword" maxlength="20" minlength="8" placeholder="Confirm Password"
-                        class="plane p-1 passwd width-100p">
-                    <button role="button" type="button" class="showHide plane d-none">SHOW</button>
-                    <small class="pt-1">Both Passwords should be same</small>
-                </div>
-                <div class="mt-2 mb-1 center">
-                    <div class="my-min center">
-                        <a class="main-color" href="/pizzashop/routes/login.php">Already Have an Account Login</a>
-                    </div>
-                    <input type="submit" value="REGISTER" class="btn">
-                </div>
-            </form>
-        </div>
-    </div>
 
+        <form action="signup.php" method="post" >
+            <div class="center mt-2">
+                <h2>WELCOME TO <span class="main-color">PIZZATA</span> </h2>
+                <h2 class="my-1 center">REGISTER HERE</h2>
+            </div>
+            <div class="my-1 with-100p">
+                <input type="text" name="username" autocomplete="off" minlength="3" maxlength="15"
+                    placeholder="User Name" class=" p-1  width-100p">
+            </div>
+            <div class="my-1 with-100p">
+                <input type="email" name="email" placeholder="Email" minlength="14" maxlength="50"
+                    class=" p-1  width-100p">
+            </div>
+            <div class="my-1 with-100p">
+                <input type="tel" name="contact" maxlength="15" minlength="11" placeholder="Contact"
+                    class=" p-1  width-100p">
+            </div>
+            <div class="my-1 with-100p relative">
+                <input type="password" name="password" maxlength="20" minlength="8" placeholder="Password"
+                    class=" p-1 passwd width-100p">
+                <button role="button" type="button" class="showHide  d-none">SHOW</button>
+            </div>
+            <div class="my-1 with-100p relative">
+                <input type="password" name="cpassword" maxlength="20" minlength="8" placeholder="Confirm Password"
+                    class=" p-1 passwd width-100p">
+                <button role="button" type="button" class="showHide  d-none">SHOW</button>
+                <small class="pt-1 main-color">Both Passwords should be same</small>
+            </div>
+            <div class="mt-2 mb-1 center">
+                <div class="my-min center">
+                    <a class="main-color" href="/pizzashop/routes/login.php">Already Have an Account Login</a>
+                </div>
+                <input type="submit" value="REGISTER" class="btn">
+            </div>
+        </form>
+    </div>
 </body>
 
 <script>

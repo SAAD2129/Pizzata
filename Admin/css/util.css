@@ -9,12 +9,14 @@
 	text-decoration: none;
 	font-family: 'Poppins', sans-serif;	color: black;
 	scroll-behavior: smooth;
+	outline: none;
+	border: none;
 }
 
 :root {
   
-	--main-color: #3B424A;
-	--hover-color: #6c757d;
+	--main-color: #ff5a5f;
+	--hover-color: #ff4046;
   --text-color: #8e8e8e;
 	--border-color: #dbdbdb;
 	--bg-color: #caf0f824;

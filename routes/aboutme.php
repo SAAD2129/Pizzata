@@ -32,7 +32,6 @@ include("../partials/dbconnect.php");
                 <legend class="main-color">User Name</legend>
                 <?php
                 $User = $_SESSION['user'];
-                echo $User;
                 $sql = "SELECT * FROM `users` WHERE `user_name` = '$User'";
                 $res = mysqli_query($conn, $sql);
                 $User = mysqli_fetch_assoc($res);
@@ -49,7 +48,7 @@ include("../partials/dbconnect.php");
             <fieldset class="plane width-75p my-1 rounded-6 px-1 font-color">
                 <legend class="main-color">Contact</legend>
                 <?php
-                echo $User['user_contact'];
+                echo '0'.$User['user_contact'];
                 ?>
             </fieldset>
         </div>
